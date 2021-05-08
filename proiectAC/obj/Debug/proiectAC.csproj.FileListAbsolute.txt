@@ -11,3 +11,16 @@ D:\Facultate\Anul 3\Semestrul 2\Sisteme de operare\Laborator\VisualStudio\custom
 D:\Facultate\Anul 3\Semestrul 2\Sisteme de operare\Laborator\VisualStudio\customButton\customButton\obj\Debug\proiectAC.csproj.CoreCompileInputs.cache
 D:\Facultate\Anul 3\Semestrul 2\Sisteme de operare\Laborator\VisualStudio\customButton\customButton\obj\Debug\proiectAC.exe
 D:\Facultate\Anul 3\Semestrul 2\Sisteme de operare\Laborator\VisualStudio\customButton\customButton\obj\Debug\proiectAC.pdb
+D:\GitHub\arhitectura_microprocesor\proiectAC\bin\Debug\proiectAC.exe.config
+D:\GitHub\arhitectura_microprocesor\proiectAC\bin\Debug\proiectAC.exe
+D:\GitHub\arhitectura_microprocesor\proiectAC\bin\Debug\proiectAC.pdb
+D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csprojAssemblyReference.cache
+D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\customButton.CustomButton.resources
+D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\customButton.Form1.resources
+D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\customButton.Forms.Editor.resources
+D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\customButton.Forms.Memorie.resources
+D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Properties.Resources.resources
+D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csproj.GenerateResource.cache
+D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csproj.CoreCompileInputs.cache
+D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.exe
+D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.pdb

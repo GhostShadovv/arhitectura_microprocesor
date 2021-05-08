@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using proiectAC;
+using System;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace customButton
@@ -14,7 +9,7 @@ namespace customButton
     public partial class Form1 : Form
     {
         private Form activeForm;
-        private Forms.Editor f = new Forms.Editor();
+        private readonly Forms.Editor f = new Forms.Editor();
         private string savedFile = "";
         private string initialSaveDirectory = "C:";
         private string initialOpenDirectory = "C:";
@@ -49,40 +44,40 @@ namespace customButton
             childForm.Show();
 
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             button2.BackColor = Color.RoyalBlue;
             // new Forms.Editor();
             OpenChildForm(new Forms.Memorie());
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             button3.BackColor = Color.RoyalBlue;
             OpenChildForm(new Forms.Memorie());
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Button4_Click(object sender, EventArgs e)
         {
             button4.BackColor = Color.RoyalBlue;
         }
 
-        private void button2_Leave(object sender, EventArgs e)
+        private void Button2_Leave(object sender, EventArgs e)
         {
             button2.BackColor = Color.Blue;
         }
 
-        private void button3_Leave(object sender, EventArgs e)
+        private void Button3_Leave(object sender, EventArgs e)
         {
             button3.BackColor = Color.Blue;
         }
 
-        private void button4_Leave(object sender, EventArgs e)
+        private void Button4_Leave(object sender, EventArgs e)
         {
             button4.BackColor = Color.Blue;
         }
 
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        private void NewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             saveFileDialog1.InitialDirectory = initialSaveDirectory;
             saveFileDialog1.Title = "Create new file";
@@ -99,35 +94,34 @@ namespace customButton
                 pEditor.Tag = f;
                 f.BringToFront();
                 f.Show();
-                f.saveFile(savedFile);
+                f.SaveFile(savedFile);
 
             }
         }
 
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string Chosen_File = "";
             openFileDialog1.InitialDirectory = initialOpenDirectory;
             openFileDialog1.Title = "Open a file";
             openFileDialog1.FileName = "";
             openFileDialog1.Filter = "Assembly |*.asm";
             if (openFileDialog1.ShowDialog() != System.Windows.Forms.DialogResult.Cancel)
             {
-                Chosen_File = openFileDialog1.FileName;
+                string Chosen_File = openFileDialog1.FileName;
                 initialOpenDirectory = Chosen_File;
-                f.loadFile(Chosen_File);
+                f.LoadFile(Chosen_File);
                 f.AddLineNumbers();
         }
             }
 
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (savedFile != "")
             {
-                f.saveFile(savedFile);
+                f.SaveFile(savedFile);
             }
         }
-        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             saveFileDialog1.InitialDirectory = initialSaveDirectory;
             saveFileDialog1.Title = "Create new file";
@@ -137,27 +131,31 @@ namespace customButton
             {
                 savedFile = saveFileDialog1.FileName;
                 initialSaveDirectory = saveFileDialog1.FileName;
-                f.saveFile(savedFile);
+                f.SaveFile(savedFile);
             }
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void Button11_Click(object sender, EventArgs e)
         {
             f.HighlightLine(i++); 
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void Button10_Click(object sender, EventArgs e)
         {
+            Assembler assembler = new Assembler();
             tbExemplu.Clear();
-            var aux = f.ParseLines();
+            var aux = assembler.ParseLines(f.GetRichTextBox());
             if (aux != null)
             {
-                System.IO.File.WriteAllText(@"temp.bin", string.Empty);
+                if (hexDisplay)
+                {
+                    System.IO.File.WriteAllText(@"temp.bin", string.Empty);
+                }
                 using (var s = File.OpenWrite("temp.bin"))
                 {
                     foreach (var item in aux)
@@ -182,7 +180,7 @@ namespace customButton
             }                        
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void Button9_Click(object sender, EventArgs e)
         {
             hexDisplay = !hexDisplay;
             if (!hexDisplay)

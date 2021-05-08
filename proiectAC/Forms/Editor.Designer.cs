@@ -81,12 +81,12 @@
             this.richTextBox1.Size = new System.Drawing.Size(618, 452);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
-            this.richTextBox1.VScroll += new System.EventHandler(this.richTextBox1_VScroll);
-            this.richTextBox1.FontChanged += new System.EventHandler(this.richTextBox1_FontChanged);
-            this.richTextBox1.SizeChanged += new System.EventHandler(this.richTextBox1_FontChanged);
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
-            this.richTextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.richTextBox1_KeyDown);
-            this.richTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.richTextBox1_KeyPress);
+            this.richTextBox1.VScroll += new System.EventHandler(this.RichTextBox1_VScroll);
+            this.richTextBox1.FontChanged += new System.EventHandler(this.RichTextBox1_FontChanged);
+            this.richTextBox1.SizeChanged += new System.EventHandler(this.RichTextBox1_FontChanged);
+            this.richTextBox1.TextChanged += new System.EventHandler(this.RichTextBox1_TextChanged);
+            this.richTextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RichTextBox1_KeyDown);
+            this.richTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RichTextBox1_KeyPress);
             // 
             // Editor
             // 
