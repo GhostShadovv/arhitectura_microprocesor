@@ -305,9 +305,8 @@ namespace customButton.Forms
                     binaryString = valBin.PadLeft(16, '0');
                     break;
 
-                default:
+                case string _ when int.TryParse(source_search, out int val):
                     //converteste din zecimal in binar pe 16 biti  
-                    int.TryParse(source_search, out int val);
                     if (val > 65535)
                     {
                         Trace.WriteLine($"{val} este mai mare decat domeniul de reprezentare 0 : 65535");
@@ -315,6 +314,8 @@ namespace customButton.Forms
                     }
                     binaryString = Convert.ToString(val, 2).PadLeft(16, '0');
                     break;
+                default:
+                    return source_search;
             }
             if (binaryString.Length > 16)
             {

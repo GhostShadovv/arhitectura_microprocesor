@@ -30,6 +30,7 @@ namespace proiectAC
         /// <returns></returns>
         internal static string CheckLabelOffset(string noSpace, string opcode, int limit, int bits_size, ref Dictionary<string, int> labels, int Offset_PC, int PC)
         {
+            //Daca se cauta eticheta
             var label_aux = labels.FirstOrDefault(t => t.Key == noSpace);
             if (label_aux.Key != null)
             {
@@ -45,6 +46,7 @@ namespace proiectAC
                     throw new InvalidExpressionException("Distanta pentru instructiunea JMP este prea mare");
                 }
             }
+            //Daca se cauta valoare
             else
             {
                 int value;
@@ -62,16 +64,15 @@ namespace proiectAC
                         int.TryParse(noSpace, out value);
                         break;
                 }
+                //Verificari conditii si tratare exceptii
                 int PCnext = value - PC;
                 if (PCnext - PC < 0)
                 {
                     //TO DO !!!!
                     Trace.WriteLine($"TODO trebuie sa verifici daca iesi din zona de cod nu adresa mai mica de 0 sau poate nu, cine stie ... :) ");
-
                     Trace.WriteLine($"Ai ajuns la o zona de memorie mai mica de adresa 0");
                     throw new InvalidExpressionException($"Ai ajuns la o zona de memorie mai mica de adresa 0");
                 }
-
                 if (PCnext != 0)
                 {
                     if (PCnext > -(limit + 1) && PCnext < limit)

@@ -36,7 +36,6 @@ namespace customButton.Forms
         {
             SB_THUMBPOSITION = 4
         }
-
         private int LastLineIndex;
 
         private void ParcurgeLinii(List<string> linii, ref int linieCurenta, ref int ct)
@@ -117,13 +116,11 @@ namespace customButton.Forms
                 AddLineNumbers();
             }
         }
-
         private void LineNumberTextBox_MouseDown(object sender, MouseEventArgs e)
         {            
             richTextBox1.Select();
             LineNumberTextBox.DeselectAll();
         }
-
         public void HighlightLine(int index)
         {
             richTextBox1.SelectAll();
@@ -142,7 +139,6 @@ namespace customButton.Forms
             richTextBox1.Select(start, length);                 // Select from there to the end
             richTextBox1.SelectionBackColor = Color.Green;
         }
-
         public void SaveFile(string path)
         {
             richTextBox1.SaveFile(path, RichTextBoxStreamType.PlainText);
@@ -151,7 +147,6 @@ namespace customButton.Forms
         {
             richTextBox1.LoadFile(path, RichTextBoxStreamType.PlainText);
         }
-
         public void AddLineNumbers()
         {
             LineNumberTextBox.Clear();

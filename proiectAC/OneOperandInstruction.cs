@@ -20,17 +20,17 @@ namespace proiectAC
         /// <param name="noSpace"></param>
         /// <param name="opcode"></param>
         /// <returns></returns>
-        public string CorrectOneOperand(string[] noSpace, ref string opcode, ref Dictionary<string, int> labels, int lineNumberDebug, int Offset_PC, int PC)
+        public string CorrectOneOperand(string[] noSpace, ref string opcode, ref Dictionary<string, int> labels, Dictionary<string, int> procedures, int lineNumberDebug, int Offset_PC, int PC)
         {
             //in cazul in care am push flags, pop flags, push pc, pop pc, sa mearga mai departe
             if (!(noSpace[1].Equals("FLAG") || noSpace[1].Equals("PC")))
             {
-                return OneOperand(noSpace, ref labels, Offset_PC, PC);
+                return OneOperand(noSpace, ref labels, procedures, Offset_PC, PC);
             }
             else
             {
                 if (noSpace[1].Equals("FLAG"))
-                {
+                {                    
                     Trace.WriteLine($"Corectat opcode: {opcode}, instructiunea {noSpace[1]} in opcode: {Types.Search("PUSH FLAG")}, instructiunea PUSH FLAG la linia {lineNumberDebug}");
                     return Types.Search("PUSH FLAG");
                 }
@@ -49,7 +49,7 @@ namespace proiectAC
             }
         }
 
-        private static string OneOperand(string[] noSpace, ref Dictionary<string, int> labels, int Offset_PC, int PC)
+        private static string OneOperand(string[] noSpace, ref Dictionary<string, int> labels, Dictionary<string, int> procedures, int Offset_PC, int PC)
         {
             /* noSpace[0] noSpace[1]
              *    opcode,      dest
@@ -75,10 +75,11 @@ namespace proiectAC
                 destOp = Types.ConvertNumbersToString(noSpace[1]);
                 if (destOp != "0".PadLeft(16, '0'))
                 {
-                    var label_aux = labels.FirstOrDefault(t => t.Key == noSpace[1]);
-                    if (label_aux.Key != null)
+                    var procedure_aux = procedures.FirstOrDefault(t => t.Key == noSpace[1]);
+                    if (procedure_aux.Key != null)
                     {
-                        //ceva pt call
+                        destOp = Types.ConvertNumbersToString(procedure_aux.Value.ToString());
+                        return Types.ReturnBinaryLine(opcode, "", "", MAD, RD, destOp, "");
                     }
                 }
                 return Types.ReturnBinaryLine(opcode, "", "", MAD, RD, destOp, "");

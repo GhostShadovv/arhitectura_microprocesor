@@ -5,13 +5,12 @@ using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
-using  Procedures = System.Tuple<string, int, System.Collections.Generic.List<string>>;
 namespace proiectAC
 {
     class Assembler
     {
         internal static Dictionary<string, int> labels = new Dictionary<string, int>();
-        private static Procedures procedures_details;
+        private static readonly Dictionary<string, int> procedures = new Dictionary<string, int>();
 
         internal static int PC = 0;
         internal static int Offset_PC = 0;
@@ -25,12 +24,14 @@ namespace proiectAC
             labels.Clear();
             try
             {
-                var noCommentLines = richTextBox1.Text.ToUpper().Split(new[] { Environment.NewLine, "\n" }, StringSplitOptions.None);
+                var noCommentLines = richTextBox1.Text.ToUpper().Split(new[] { Environment.NewLine, "\n"}, StringSplitOptions.None);
                 SetLabels(noCommentLines);
                 string[] code_lines = new string[200];
 
                 for (int i = 0, j = 0; i < noCommentLines.Length; i++)
                 {
+                    lineNumberDebug++;
+                    noCommentLines[i] = noCommentLines[i].Replace("\t", "");
                     switch (noCommentLines)
                     {
                         case string[] _ when noCommentLines[i].StartsWith(".MODEL"):
@@ -40,7 +41,7 @@ namespace proiectAC
                         case string[] _ when noCommentLines[i].StartsWith(".DATA"):
                             break;
                         case string[] _ when noCommentLines[i].StartsWith(".CODE"):
-                            j = ExecuteCode(noCommentLines, code_lines, ++i, j);
+                            j = ExecuteCode(noCommentLines, code_lines, i, j);
                             break;
                         default:
                             break;
@@ -79,7 +80,7 @@ namespace proiectAC
                             break;
                         case string _ when opcode.StartsWith(Types.oneOperand):
                             OneOperandInstruction one = new OneOperandInstruction();
-                            code_lines[j++] = one.CorrectOneOperand(noSpace, ref opcode, ref labels, lineNumberDebug, Offset_PC, PC);
+                            code_lines[j++] = one.CorrectOneOperand(noSpace, ref opcode, ref labels, procedures, lineNumberDebug, Offset_PC, PC);
                             break;
                         case string _ when opcode.StartsWith(Types.jumpOperand):
                             JumpOperandInstruction jump = new JumpOperandInstruction();
@@ -94,7 +95,8 @@ namespace proiectAC
                     PC++;
                 }
                 lineNumberDebug++;
-            }            return j;
+            }
+            return j;
         }
 
         /// <summary>
@@ -105,59 +107,54 @@ namespace proiectAC
         /// <returns></returns>
         private static void SetLabels(string[] noCommentLines)
         {
+            lineNumberDebug = 1;
             bool code = false;
             for (int i = 0; i < noCommentLines.Length; i++)
             {
                 if (code || noCommentLines[i].StartsWith(".CODE"))
                 {
                     code = true;
+                    string[] noSpace;
+                    noCommentLines[i] = noCommentLines[i].Contains("ENDP") ? "" : noCommentLines[i];
                     if (noCommentLines[i].Contains("PROC"))
                     {
-                        string[] noSpace = noCommentLines[i++].Split(new[] { " ", "\t" }, StringSplitOptions.RemoveEmptyEntries);
-                        List<string> procedures_instructions = new List<string>();
-                        noCommentLines[--i] = "";
-                        while (!noCommentLines[i].Contains("ENDP"))
-                        {
-                            procedures_instructions.Add(noCommentLines[i].Replace("\t", String.Empty));
-                            noCommentLines[i++] = "";
-                        }
+                        noSpace = noCommentLines[i].Split(new[] { " ", "\t" }, StringSplitOptions.RemoveEmptyEntries);
                         noCommentLines[i] = "";
-                        procedures_details = new Procedures(noSpace[0], PC, procedures_instructions);                        
+                        procedures[noSpace[0]] = PC;
+                        Trace.WriteLine($"Am adaugat procedura {noSpace[0]} ce indica spre instructiunea {PC+1}: {noCommentLines[i+1]} la linia {lineNumberDebug}");
                     }
-                    else
+
+                    noSpace = noCommentLines[i].Split(new[] { " ", ",", "\t" }, StringSplitOptions.RemoveEmptyEntries);
+                    //cazul in care am eticheta
+                    if (noSpace.Length > 0)
                     {
-                        string[] noSpace = noCommentLines[i].Split(new[] { " ", ",", "\t" }, StringSplitOptions.RemoveEmptyEntries);
-                        //cazul in care am eticheta
-                        if (noSpace.Length > 0)
+                        switch (noSpace[0])
                         {
-                            if (noSpace[0].Substring(noSpace[0].Length - 1).Contains(":"))
-                            {
-                                labels[noSpace[0].Substring(0, noSpace[0].Length - 1)] = PC;
-                                Trace.WriteLine($"Adaugat eticheta {labels.Keys.ElementAt(labels.Count - 1)} ce indica spre instructiunea {PC}, " +
-                                    $"linia {(noSpace.Length > 1 ? lineNumberDebug : lineNumberDebug + 1)}: {(noSpace.Length > 1 ? noCommentLines[i] : noCommentLines[i + 1])}");
+                            case string _ when noSpace[0].EndsWith(":"):
+                                labels[noSpace[0].Trim(':')] = PC;
+                                Trace.WriteLine($"Adaugat eticheta {labels.Keys.ElementAt(labels.Count - 1)} ce indica spre instructiunea {PC}: {noCommentLines[i]}, " +
+                                    $"linia {lineNumberDebug + 1}: {noCommentLines[i + 1]}");
+                                noCommentLines[i] = "";
+                                break;
+
+                            case string _ when noSpace[0].Contains(":"):
+                                noSpace = noCommentLines[i].Split(new[] { ":", " ", ",", "\t" }, StringSplitOptions.RemoveEmptyEntries);
+                                labels[noSpace[0]] = PC;
+                                Trace.WriteLine($"Adaugat eticheta {labels.Keys.ElementAt(labels.Count - 1)} ce indica spre instructiunea {PC}: {noCommentLines[i]}, " +
+                                    $"linia {lineNumberDebug}: {noCommentLines[i]}");
                                 noCommentLines[i] = String.Join("", noSpace.Skip(1));
-                                //PC++;
-                            }
-                            else
-                            {
-                                if (noSpace[0].Contains(":"))
-                                {
-                                    noSpace = noCommentLines[i].Split(new[] { ":", " ", ",", "\t" }, StringSplitOptions.RemoveEmptyEntries);
-                                    labels[noSpace[0]] = PC;
-                                    Trace.WriteLine($"Adaugat eticheta {labels.Keys.ElementAt(labels.Count - 1)} ce indica spre instructiunea {PC}, linia {lineNumberDebug}: {noCommentLines[i]}");
-                                    //PC++;
-                                }
-                            }
+                                break;
+
+                            default:
+                                break;
                         }
+                        PC++;
                     }
-                    PC++;
                 }
                 lineNumberDebug++;
             }
             lineNumberDebug = 0;
-        }
-
-       
+        }      
 
     }
 }
