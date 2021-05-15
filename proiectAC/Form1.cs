@@ -150,34 +150,36 @@ namespace customButton
             Assembler assembler = new Assembler();
             tbExemplu.Clear();
             var aux = assembler.ParseLines(f.GetRichTextBox());
-            if (aux != null)
+            if (aux == null)
             {
-                if (hexDisplay)
+                return;
+            }
+            if (hexDisplay)
+            {
+                System.IO.File.WriteAllText(@"temp.bin", string.Empty);
+            }
+            using (var s = File.OpenWrite("temp.bin"))
+            {
+                foreach (var item in aux)
                 {
-                    System.IO.File.WriteAllText(@"temp.bin", string.Empty);
-                }
-                using (var s = File.OpenWrite("temp.bin"))
-                {
-                    foreach (var item in aux)
+                    if (hexDisplay)
                     {
-                        if (hexDisplay)
+                        var longitems = item.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                        foreach (var longitem in longitems)
                         {
-                            var longitems = item.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-                            foreach (var longitem in longitems)
-                            {
-                                string hexVal = Convert.ToInt32(longitem, 2).ToString("X").PadLeft(4, '0');
-                                tbExemplu.AppendText(hexVal + Environment.NewLine);
-                                var bw = new BinaryWriter(s);
-                                bw.Write(Convert.ToInt16(hexVal, 16));
-                            }
-                        }
-                        else
-                        {
-                            tbExemplu.AppendText(item + Environment.NewLine);
+                            string hexVal = Convert.ToInt32(longitem, 2).ToString("X").PadLeft(4, '0');
+                            tbExemplu.AppendText(hexVal + Environment.NewLine);
+                            var bw = new BinaryWriter(s);
+                            bw.Write(Convert.ToInt16(hexVal, 16));
                         }
                     }
+                    else
+                    {
+                        tbExemplu.AppendText(item + Environment.NewLine);
+                    }
                 }
-            }                        
+            }
+
         }
 
         private void Button9_Click(object sender, EventArgs e)

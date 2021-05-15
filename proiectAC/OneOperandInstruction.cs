@@ -11,9 +11,6 @@ namespace proiectAC
 {
     class OneOperandInstruction
     {
-        private static readonly Assembler assembler = new Assembler();
-
-
         /// <summary>
         /// Corectie pentru instructiunile formate din 2 cuvinte. Ex: push pc VS push r1
         /// </summary>
