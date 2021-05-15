@@ -34,13 +34,16 @@ namespace proiectAC
                     noCommentLines[i] = noCommentLines[i].Replace("\t", "");
                     switch (noCommentLines)
                     {
-                        case string[] _ when noCommentLines[i].StartsWith(".MODEL"):
+                        case string[] _ when noCommentLines[i].StartsWith(Types.directiveModel):
+                            ExecuteModel(noCommentLines, code_lines,i,ref j);
                             break;
-                        case string[] _ when noCommentLines[i].StartsWith(".STACK"):
+                        case string[] _ when noCommentLines[i].StartsWith(Types.directiveStack):
+                            ExecuteStack(noCommentLines, code_lines, i, ref j);
                             break;
-                        case string[] _ when noCommentLines[i].StartsWith(".DATA"):
+                        case string[] _ when noCommentLines[i].StartsWith(Types.directiveData):
+                            ExecuteData(noCommentLines, code_lines, i , j);
                             break;
-                        case string[] _ when noCommentLines[i].StartsWith(".CODE"):
+                        case string[] _ when noCommentLines[i].StartsWith(Types.directiveCode):
                             j = ExecuteCode(noCommentLines, code_lines, i, j);
                             break;
                         default:
@@ -55,6 +58,49 @@ namespace proiectAC
                 return null;
             }
         }
+
+        private void ExecuteModel(string[] noCommentLines, string[] code_lines,int i, ref int j)
+        {
+            string[] noSpace = null;
+            foreach (var item in noCommentLines)
+            {
+                if(item.Equals(Types.directiveCode) || item.Equals(Types.directiveData) || item.Equals(Types.directiveModel) || item.Equals(Types.directiveStack))
+                {
+                    break;
+                }
+                noSpace = item.Split(' ');
+            }
+            string modelType = Types.Search(noSpace[1]);
+            if (modelType != noSpace[1])
+            {
+                code_lines[j++] += Types.Search(noSpace[0].Substring(1)) + modelType;
+            }
+            else
+            {
+                Trace.WriteLine($"{noSpace[1]} nu este un model valid");
+                throw new InvalidExpressionException($"{noSpace[1]} nu este un model valid, modelele valide sunt tiny, small si large");
+            }
+        }
+
+        private void ExecuteStack(string[] noCommentLines, string[] code_lines, int i, ref int j)
+        {
+            string[] noSpace = null;
+            foreach (var item in noCommentLines)
+            {
+                if (item.Equals(Types.directiveCode) || item.Equals(Types.directiveData) || item.Equals(Types.directiveModel) || item.Equals(Types.directiveStack))
+                {
+                    break;
+                }
+                noSpace = item.Split(' ');
+            }
+            code_lines[j++] += Types.Search(noSpace[0].Substring(1)) + Types.ConvertNumbersToString(noSpace[1]).Substring(8);
+        }
+
+        private void ExecuteData(string[] noCommentLines, string[] code_lines, int i, int j)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Codifica instructiuniile de dupa directiva .CODE
         /// </summary>

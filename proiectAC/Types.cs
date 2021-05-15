@@ -7,15 +7,30 @@ namespace customButton.Forms
 {
     public static class Types
     {
-        public static string oneOperand = "10";
-        public static string twoOperand = "0";
-        public static string jumpOperand = "110";
-        public static string diversOperand = "111";
-        public static string callInstr = "CALL";
-        public static string jmpInstr = "JMP";
-        public static string indirectSeparator = "(";
-        public static string hexSeparator = "0X";
-        public static string binarySeparator = "0B";
+        public static string oneOperand     = "10";
+        public static string twoOperand     = "0";
+        public static string jumpOperand    = "110";
+        public static string diversOperand  = "111";
+        public static string callInstr      = "CALL";
+        public static string jmpInstr       = "JMP";
+        public static string indirectSeparator  = "(";
+        public static string hexSeparator       = "0X";
+        public static string binarySeparator    = "0B";
+        public static string directiveModel     = ".MODEL";
+        public static string directiveStack     = ".STACK";
+        public static string directiveData      = ".DATA";
+        public static string directiveCode      = ".CODE";
+        public static string nameTiny = "TINY";
+        public static string nameSmall = "SMALL";
+        public static string nameLarge = "LARGE";
+
+        public static readonly string MODEL = "11110000";
+        public static readonly string STACK = "11110001";
+        public static readonly string DATA  = "11110010";
+        public static readonly string CODE  = "11110011";
+        public static readonly string modelTiny  = "00000000";
+        public static readonly string modelSmall = "00000001";
+        public static readonly string modelLarge = "00000010";
 
         private static readonly string MOV = "0000";
         private static readonly string ADD = "0001";
@@ -89,15 +104,25 @@ namespace customButton.Forms
         private static readonly string R15 = "1111";
 
 
-        private static readonly string MA_IMEDIAT = "00";
-        private static readonly string MA_DIRECT = "01";
+        private static readonly string MA_IMEDIAT  = "00";
+        private static readonly string MA_DIRECT   = "01";
         private static readonly string MA_INDIRECT = "10";
-        private static readonly string MA_INDEXAT = "11";
+        private static readonly string MA_INDEXAT  = "11";
 
         public static string Search(string text)
         {
             switch (text)
             {
+                case "MODEL": return MODEL;
+
+                case "TINY": return modelTiny;
+                case "SMALL": return modelSmall;
+                case "LARGE": return modelLarge;
+
+                case "DATA": return DATA;
+                case "STACK": return STACK;
+                case "CODE": return CODE;
+
                 case "MOV": return MOV;
                 case "ADD": return ADD;
                 case "SUB": return SUB;
