@@ -15,10 +15,6 @@ D:\GitHub\arhitectura_microprocesor\proiectAC\bin\Debug\proiectAC.exe.config
 D:\GitHub\arhitectura_microprocesor\proiectAC\bin\Debug\proiectAC.exe
 D:\GitHub\arhitectura_microprocesor\proiectAC\bin\Debug\proiectAC.pdb
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csprojAssemblyReference.cache
-D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\customButton.CustomButton.resources
-D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\customButton.Form1.resources
-D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\customButton.Forms.Editor.resources
-D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\customButton.Forms.Memorie.resources
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Properties.Resources.resources
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csproj.GenerateResource.cache
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csproj.CoreCompileInputs.cache
@@ -37,3 +33,8 @@ C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitect
 C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.Editor.resources
 C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.Memorie.resources
 C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.CodificareInstructiuni.resources
+D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.CustomButton.resources
+D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Form1.resources
+D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.Editor.resources
+D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.Memorie.resources
+D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.CodificareInstructiuni.resources
