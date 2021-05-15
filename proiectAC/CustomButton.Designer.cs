@@ -1,4 +1,4 @@
-﻿namespace customButton
+﻿namespace proiectAC
 {
     partial class CustomButton
     {

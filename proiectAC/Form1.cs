@@ -4,17 +4,22 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace customButton
+namespace proiectAC
 {
     public partial class Form1 : Form
     {
         private Form activeForm;
         private readonly Forms.Editor f = new Forms.Editor();
+        private Forms.Arhitectura arhitecturaForm = new Forms.Arhitectura();
+        private Forms.CodificareInstructiuni codificareInstructiuniForm = new Forms.CodificareInstructiuni();
+        private Forms.Memorie memoriaForm = new Forms.Memorie();
         private string savedFile = "";
         private string initialSaveDirectory = "C:";
         private string initialOpenDirectory = "C:";
         private int i = 0;
         private bool hexDisplay = false;
+
+        private ALU ALU = new ALU();
 
         public Form1()
         {
@@ -26,7 +31,6 @@ namespace customButton
             pEditor.Tag = f;
             f.BringToFront();
             f.Show();
-        
         }
         private void OpenChildForm(Form childForm)
         {
@@ -44,37 +48,50 @@ namespace customButton
             childForm.Show();
 
         }
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            button2.BackColor = Color.RoyalBlue;
-            // new Forms.Editor();
-            OpenChildForm(new Forms.Memorie());
+
+        private void resetTabButtons() {
+            btnArhitectura.BackColor = Color.LightGray;
+            btnCodificareInstructiuni.BackColor = Color.LightGray;
+            btnMemoria.BackColor = Color.LightGray;
         }
 
-        private void Button3_Click(object sender, EventArgs e)
+        // Btn Arhitectura
+        private void btnArhitectura_Click(object sender, EventArgs e)
         {
-            button3.BackColor = Color.RoyalBlue;
-            OpenChildForm(new Forms.Memorie());
+            resetTabButtons();
+            btnArhitectura.BackColor = Color.Silver;
+            btnArhitectura.ForeColor = Color.DimGray;
+            OpenChildForm(arhitecturaForm);
         }
 
-        private void Button4_Click(object sender, EventArgs e)
+        private void btnArhitectura_Leave(object sender, EventArgs e)
         {
-            button4.BackColor = Color.RoyalBlue;
+            btnArhitectura.BackColor = Color.LightGray;
         }
 
-        private void Button2_Leave(object sender, EventArgs e)
+        // Btn Codificare Instr
+        private void btnCodificareInstructiuni_Click(object sender, EventArgs e)
         {
-            button2.BackColor = Color.Blue;
+            resetTabButtons();
+            btnCodificareInstructiuni.BackColor = Color.Silver;
+            btnCodificareInstructiuni.ForeColor = Color.DimGray;
+            OpenChildForm(codificareInstructiuniForm);
+        }
+        private void btnCodificareInstructiuni_Leave(object sender, EventArgs e)
+        {
+            btnCodificareInstructiuni.BackColor = Color.LightGray;
         }
 
-        private void Button3_Leave(object sender, EventArgs e)
+        // Btn Memoria
+        private void btnMemoria_Click(object sender, EventArgs e)
         {
-            button3.BackColor = Color.Blue;
+            resetTabButtons();
+            btnMemoria.BackColor = Color.Silver;
+            btnMemoria.ForeColor = Color.DimGray;
+            OpenChildForm(memoriaForm);
         }
-
-        private void Button4_Leave(object sender, EventArgs e)
-        {
-            button4.BackColor = Color.Blue;
+        private void btnMemoria_Leave(object sender, EventArgs e) {
+            btnMemoria.BackColor = Color.LightGray;
         }
 
         private void NewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -140,59 +157,38 @@ namespace customButton
             Close();
         }
 
-        private void Button11_Click(object sender, EventArgs e)
-        {
-            f.HighlightLine(i++); 
-        }
-
-        private void Button10_Click(object sender, EventArgs e)
+        private void parsareCodToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Assembler assembler = new Assembler();
-            tbExemplu.Clear();
+            codificareInstructiuniForm.clearOutput();
             var aux = assembler.ParseLines(f.GetRichTextBox());
-            if (aux == null)
-            {
+            if (aux == null) {
                 return;
             }
-            if (hexDisplay)
-            {
+            if (hexDisplay) {
                 System.IO.File.WriteAllText(@"temp.bin", string.Empty);
             }
-            using (var s = File.OpenWrite("temp.bin"))
-            {
-                foreach (var item in aux)
-                {
-                    if (hexDisplay)
-                    {
+            using (var s = File.OpenWrite("temp.bin")) {
+                foreach (var item in aux) {
+                    if (hexDisplay) {
                         var longitems = item.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-                        foreach (var longitem in longitems)
-                        {
+                        foreach (var longitem in longitems) {
                             string hexVal = Convert.ToInt32(longitem, 2).ToString("X").PadLeft(4, '0');
-                            tbExemplu.AppendText(hexVal + Environment.NewLine);
+                            codificareInstructiuniForm.appendTextToOutput(hexVal + Environment.NewLine);
+
                             var bw = new BinaryWriter(s);
                             bw.Write(Convert.ToInt16(hexVal, 16));
                         }
-                    }
-                    else
-                    {
-                        tbExemplu.AppendText(item + Environment.NewLine);
+                    } else {
+                        codificareInstructiuniForm.appendTextToOutput(item + Environment.NewLine);
                     }
                 }
             }
-
         }
 
-        private void Button9_Click(object sender, EventArgs e)
+        private void conversieHEXToolStripMenuItem_Click(object sender, EventArgs e)
         {
             hexDisplay = !hexDisplay;
-            if (!hexDisplay)
-            {
-                button9.BackColor = Color.Blue;
-            }else
-            {
-                button9.BackColor = Color.RoyalBlue;
-            }
         }
-
     }
 }

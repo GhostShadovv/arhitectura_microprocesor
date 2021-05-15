@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace customButton.Forms
+namespace proiectAC.Forms
 {
     public partial class Editor : Form
     {

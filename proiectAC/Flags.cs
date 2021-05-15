@@ -4,60 +4,59 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace customButton
-{
-    public class Flags
+namespace proiectAC {
+    public static class Flags
     {
-        private bool Z = false;
-        private bool S = false;
-        private bool C = false;
-        private bool V = false;
+        private static bool Z = false;
+        private static bool N = false;
+        private static bool C = false;
+        private static bool V = false;
 
-        public void setFlagZ()
+        public static void setFlagZ()
         {
             Z = true;
         }
-        public void resetFlagZ()
+        public static void resetFlagZ()
         {
             Z = false;
         }
-        public bool getFlagZ()
+        public static bool getFlagZ()
         {
             return Z;
         }
-        public void setFlagS()
+        public static void setFlagN()
         {
-            S = true;
+            N = true;
         }
-        public void resetFlagS()
+        public static void resetFlagN()
         {
-            S = false;
+            N = false;
         }
-        public bool getFlagS()
+        public static bool getFlagN()
         {
-            return S;
+            return N;
         }
-        public void setFlagC()
+        public static void setFlagC()
         {
             C = true;
         }
-        public void resetFlagC()
+        public static void resetFlagC()
         {
             C = false;
         }
-        public bool getFlagC()
+        public static bool getFlagC()
         {
             return C;
         }
-        public void setFlagV()
+        public static void setFlagV()
         {
             V = true;
         }
-        public void resetFlagV()
+        public static void resetFlagV()
         {
             V = false;
         }
-        public bool getFlagV()
+        public static bool getFlagV()
         {
             return V;
         }

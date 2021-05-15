@@ -24,3 +24,16 @@ D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csproj.Generat
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csproj.CoreCompileInputs.cache
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.exe
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.pdb
+C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\proiectAC.exe.config
+C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\proiectAC.exe
+C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\proiectAC.pdb
+C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csprojAssemblyReference.cache
+C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Properties.Resources.resources
+C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csproj.GenerateResource.cache
+C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.exe
+C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.pdb
+C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.CustomButton.resources
+C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Form1.resources
+C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.Editor.resources
+C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.Memorie.resources
+C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.CodificareInstructiuni.resources

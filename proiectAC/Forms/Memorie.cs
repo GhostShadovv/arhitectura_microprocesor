@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace customButton.Forms
+namespace proiectAC.Forms
 {
     public partial class Memorie : Form
     {

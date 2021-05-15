@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 
-namespace customButton
+namespace proiectAC
 {
     [DefaultEvent("Click")]
     public partial class CustomButton : UserControl
