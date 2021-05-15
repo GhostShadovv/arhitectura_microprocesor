@@ -36,7 +36,7 @@ namespace proiectAC
                     switch (noCommentLines)
                     {
                         case string[] _ when noCommentLines[i].StartsWith(Types.directiveModel):
-                            ExecuteModel(noCommentLines, code_lines,i,ref j);
+                            ExecuteModel(noCommentLines, code_lines,ref i,ref j);
                             break;
                         case string[] _ when noCommentLines[i].StartsWith(Types.directiveStack):
                             ExecuteStack(noCommentLines, code_lines, i, ref j);
@@ -60,17 +60,10 @@ namespace proiectAC
             }
         }
 
-        private void ExecuteModel(string[] noCommentLines, string[] code_lines,int i, ref int j)
+        private void ExecuteModel(string[] noCommentLines, string[] code_lines,ref int i, ref int j)
         {
             string[] noSpace = null;
-            foreach (var item in noCommentLines)
-            {
-                if(item.Equals(Types.directiveCode) || item.Equals(Types.directiveData) || item.Equals(Types.directiveModel) || item.Equals(Types.directiveStack))
-                {
-                    break;
-                }
-                noSpace = item.Split(' ');
-            }
+            noSpace = noCommentLines[i].Split(' ');
             string modelType = Types.Search(noSpace[1]);
             if (modelType != noSpace[1])
             {
@@ -85,16 +78,34 @@ namespace proiectAC
 
         private void ExecuteStack(string[] noCommentLines, string[] code_lines, int i, ref int j)
         {
-            string[] noSpace = null;
-            foreach (var item in noCommentLines)
+            string[] noSpace = noCommentLines[i].Split(' ');
+            switch (noSpace.Length)
             {
-                if (item.Equals(Types.directiveCode) || item.Equals(Types.directiveData) || item.Equals(Types.directiveModel) || item.Equals(Types.directiveStack))
-                {
+                case 1:
+                    code_lines[j++] += Types.Search(noSpace[0].Substring(1)) + Types.ConvertNumbersToString("255").Substring(8);
                     break;
-                }
-                noSpace = item.Split(' ');
+
+                case 2:
+                    if (int.TryParse(noSpace[1], out int result) && result < 255)
+                    {
+                        code_lines[j++] += Types.Search(noSpace[0].Substring(1)) + Types.ConvertNumbersToString(noSpace[1]).Substring(8);
+                    }
+                    else
+                    {
+                        if (result > 255)
+                        {
+                            Trace.WriteLine($"{noSpace[1]} depaseste dimensiunea maxima pentru stiva (255)");
+                            throw new InvalidExpressionException($"{noSpace[1]} depaseste dimensiunea maxima pentru stiva (255)");
+                        }
+                        Trace.WriteLine($"{noSpace[1]} nu este un numar valid");
+                        throw new InvalidExpressionException($"{noSpace[1]} nu este un numar valid");
+                    }
+                    break;
+
+                default:
+                    Trace.WriteLine($"Instructiunea {code_lines[i]} nu este cunoscuta");
+                    throw new InvalidExpressionException($"Instructiunea nu este cunoscuta");
             }
-            code_lines[j++] += Types.Search(noSpace[0].Substring(1)) + Types.ConvertNumbersToString(noSpace[1]).Substring(8);
         }
 
         private void ExecuteData(string[] noCommentLines, string[] code_lines, int i, int j)
