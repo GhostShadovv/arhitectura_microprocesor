@@ -51,5 +51,9 @@ C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitect
 C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\Properties\Resources.Designer.cs
 C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\Properties\Settings.Designer.cs
 C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\Properties\Settings.settings
+<<<<<<< HEAD
 C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.Arhitectura.resources
 >>>>>>> 3103c6f917f36453d2cf2dda74708dec04459aa2
+=======
+C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csprojAssemblyReference.cache
+>>>>>>> parent of 3103c6f (Citire fisier bin, buton Run)

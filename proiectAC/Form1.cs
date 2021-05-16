@@ -1,6 +1,5 @@
 ﻿using proiectAC;
 using System;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -158,7 +157,7 @@ namespace proiectAC
             Close();
         }
 
-        private void buildToolStripMenuItem_Click(object sender, EventArgs e)
+        private void parsareCodToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Assembler assembler = new Assembler();
             codificareInstructiuniForm.clearOutput();
@@ -190,15 +189,6 @@ namespace proiectAC
         private void conversieHEXToolStripMenuItem_Click(object sender, EventArgs e)
         {
             hexDisplay = !hexDisplay;
-        }
-
-        private void runToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            byte[] hexBytes;
-            using (BinaryReader br = new BinaryReader(File.Open("temp.bin", FileMode.Open))) {
-                br.BaseStream.Position = 0;
-                hexBytes = br.ReadBytes(System.Convert.ToInt16((int) br.BaseStream.Length));
-            }
         }
     }
 }
