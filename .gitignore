@@ -377,3 +377,8 @@ proiectAC/obj/Debug/proiectAC.csproj.FileListAbsolute.txt
 proiectAC/obj/Debug/proiectAC.csproj.GenerateResource.cache
 proiectAC/obj/Debug/proiectAC.exe
 proiectAC/obj/Debug/proiectAC.pdb
+proiectAC/bin/Debug/exe
+*.exe
+*.pdb
+*.cache
+proiectAC/obj/Debug/proiectAC.csproj.FileListAbsolute.txt
