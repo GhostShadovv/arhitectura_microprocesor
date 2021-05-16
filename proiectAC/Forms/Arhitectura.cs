@@ -6,37 +6,34 @@ namespace proiectAC.Forms
     public partial class Arhitectura : Form {
 
         // Signals
-        public static bool CLK = false;
+        public bool PmSBUS, PdSBUS;
+        public bool PmDBUS, PdDBUS;
+        public bool PmRBUS, PdRBUS;
+        public bool PdALU;
 
-        public enum fazaCurenta { IF, OF, EX, INT };
+        public bool PmR, PdR;
+        public bool PmSP, PdSP;
+        public bool PmT, PdT;
 
-        public static bool PmSBUS, PdSBUS;
-        public static bool PmDBUS, PdDBUS;
-        public static bool PmRBUS, PdRBUS;
-        public static bool PdALU;
+        private void label1_Click(object sender, EventArgs e)
+        {
 
-        public static bool PmR, PdR;
-        public static bool PmSP, PdSP;
-        public static bool PmT, PdT;
-        public static bool PmPC, PdPC;
-        public static bool PmIVR, PdIVR;
-        public static bool PmADR, PdADR;
-        public static bool PmMDR, PdMDR;
-        public static bool PmIR;
+        }
 
-        public static bool TIF, TOF, TEX, TINT;
+        private void Arhitectura_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public bool PmPC, PdPC;
+        public bool PmIVR, PdIVR;
+        public bool PmADR, PdADR;
+        public bool PmMDR, PdMDR;
+        public bool PmIR;
 
 
         public Arhitectura() {
             InitializeComponent();
-            tCLK.Tick += new EventHandler(tCLK_Tick);
-        }
-
-        // Timer
-        public void tCLK_Tick(object sender, EventArgs e) {
-            CLK = !CLK;
-
-            //
         }
     }
 }

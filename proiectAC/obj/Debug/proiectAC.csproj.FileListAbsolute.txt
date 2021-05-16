@@ -14,6 +14,7 @@ D:\Facultate\Anul 3\Semestrul 2\Sisteme de operare\Laborator\VisualStudio\custom
 C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\proiectAC.exe.config
 C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\proiectAC.exe
 C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\proiectAC.pdb
+C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csprojAssemblyReference.cache
 C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Properties.Resources.resources
 C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csproj.GenerateResource.cache
 C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.exe
@@ -41,14 +42,5 @@ D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csproj.Generat
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csproj.CoreCompileInputs.cache
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.exe
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.pdb
-<<<<<<< HEAD
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.Arhitectura.resources
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csprojAssemblyReference.cache
-=======
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\Properties\Resources.resx
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\Properties\AssemblyInfo.cs
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\Properties\Resources.Designer.cs
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\Properties\Settings.Designer.cs
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\Properties\Settings.settings
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csprojAssemblyReference.cache
->>>>>>> bc61744ebe522bfc72058e336f73fec6a1646a0e
