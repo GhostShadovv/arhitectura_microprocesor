@@ -190,5 +190,15 @@ namespace proiectAC
         {
             hexDisplay = !hexDisplay;
         }
+
+        private void runToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            byte[] hexBytes;
+            using (BinaryReader br = new BinaryReader(File.Open("temp.bin", FileMode.Open))) {
+                br.BaseStream.Position = 0;
+                hexBytes = br.ReadBytes(System.Convert.ToInt16((int) br.BaseStream.Length));
+                //
+            }
+        }
     }
 }
