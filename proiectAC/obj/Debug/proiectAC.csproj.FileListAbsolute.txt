@@ -42,3 +42,5 @@ D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csproj.Generat
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csproj.CoreCompileInputs.cache
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.exe
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.pdb
+D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.Arhitectura.resources
+D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csprojAssemblyReference.cache

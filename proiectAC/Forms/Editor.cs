@@ -12,6 +12,7 @@ namespace proiectAC.Forms
         public Editor()
         {
             InitializeComponent();
+            FormClosing += new FormClosingEventHandler(Editor_FormClosing);
         }
 
         //pentru a sincroniza cele 2 textbox-uri
@@ -226,6 +227,12 @@ namespace proiectAC.Forms
                     richTextBox1.SelectionStart = sel+1;
                     break;                
             }
+        }
+
+        private void Editor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            Hide();
         }
     }
 }

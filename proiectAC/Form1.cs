@@ -1,5 +1,4 @@
-﻿using proiectAC;
-using System;
+﻿using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -9,14 +8,13 @@ namespace proiectAC
     public partial class Form1 : Form
     {
         private Form activeForm;
-        private readonly Forms.Editor f = new Forms.Editor();
+        private readonly Forms.Editor editorForm = new Forms.Editor();
         private Forms.Arhitectura arhitecturaForm = new Forms.Arhitectura();
         private Forms.CodificareInstructiuni codificareInstructiuniForm = new Forms.CodificareInstructiuni();
         private Forms.Memorie memoriaForm = new Forms.Memorie();
         private string savedFile = "";
         private string initialSaveDirectory = "C:";
         private string initialOpenDirectory = "C:";
-        private int i = 0;
         private bool hexDisplay = false;
 
         private ALU ALU = new ALU();
@@ -24,19 +22,20 @@ namespace proiectAC
         public Form1()
         {
             InitializeComponent();
-            f.TopLevel = false;
-            f.FormBorderStyle = FormBorderStyle.None;
-            f.Dock = DockStyle.Fill;
-            pEditor.Controls.Add(f);
-            pEditor.Tag = f;
-            f.BringToFront();
-            f.Show();
+            editorForm.TopLevel = false;
+            editorForm.FormBorderStyle = FormBorderStyle.None;
+            editorForm.Dock = DockStyle.Fill;
+            pEditor.Controls.Add(editorForm);
+            pEditor.Tag = editorForm;
+            editorForm.BringToFront();
+            editorForm.Show();
+            OpenChildForm(arhitecturaForm);
         }
         private void OpenChildForm(Form childForm)
         {
             if (activeForm != null)
             {
-                activeForm.Close();
+                activeForm.Hide();
             }
             activeForm = childForm;
             childForm.TopLevel = false;
@@ -104,14 +103,14 @@ namespace proiectAC
             {
                 savedFile = saveFileDialog1.FileName;
                 initialSaveDirectory = saveFileDialog1.FileName;
-                f.TopLevel = false;
-                f.FormBorderStyle = FormBorderStyle.None;
-                f.Dock = DockStyle.Fill;
-                pEditor.Controls.Add(f);
-                pEditor.Tag = f;
-                f.BringToFront();
-                f.Show();
-                f.SaveFile(savedFile);
+                editorForm.TopLevel = false;
+                editorForm.FormBorderStyle = FormBorderStyle.None;
+                editorForm.Dock = DockStyle.Fill;
+                pEditor.Controls.Add(editorForm);
+                pEditor.Tag = editorForm;
+                editorForm.BringToFront();
+                editorForm.Show();
+                editorForm.SaveFile(savedFile);
 
             }
         }
@@ -126,8 +125,8 @@ namespace proiectAC
             {
                 string Chosen_File = openFileDialog1.FileName;
                 initialOpenDirectory = Chosen_File;
-                f.LoadFile(Chosen_File);
-                f.AddLineNumbers();
+                editorForm.LoadFile(Chosen_File);
+                editorForm.AddLineNumbers();
         }
             }
 
@@ -135,7 +134,7 @@ namespace proiectAC
         {
             if (savedFile != "")
             {
-                f.SaveFile(savedFile);
+                editorForm.SaveFile(savedFile);
             }
         }
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -148,7 +147,7 @@ namespace proiectAC
             {
                 savedFile = saveFileDialog1.FileName;
                 initialSaveDirectory = saveFileDialog1.FileName;
-                f.SaveFile(savedFile);
+                editorForm.SaveFile(savedFile);
             }
         }
 
@@ -161,7 +160,7 @@ namespace proiectAC
         {
             Assembler assembler = new Assembler();
             codificareInstructiuniForm.clearOutput();
-            var aux = assembler.ParseLines(f.GetRichTextBox());
+            var aux = assembler.ParseLines(editorForm.GetRichTextBox());
             if (aux == null) {
                 return;
             }

@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace proiectAC.Forms {
+namespace proiectAC.Forms
+{
     public partial class Arhitectura : Form {
 
         // Signals
@@ -20,6 +14,17 @@ namespace proiectAC.Forms {
         public bool PmR, PdR;
         public bool PmSP, PdSP;
         public bool PmT, PdT;
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Arhitectura_Load(object sender, EventArgs e)
+        {
+
+        }
+
         public bool PmPC, PdPC;
         public bool PmIVR, PdIVR;
         public bool PmADR, PdADR;
