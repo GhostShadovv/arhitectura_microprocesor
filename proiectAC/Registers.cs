@@ -14,16 +14,17 @@ namespace proiectAC {
         private string ADR;
         private string MDR;
         private string IR;
+        private string[] MP = new string[1024];
 
         // R
-        public string readR(int index) {
-            return R[index];
+        public string readR(int nr) {
+            return R[nr];
         }
-        public void writeR(string value, int index) {
-            R[index] = value;
+        public void writeR(string value, int nr) {
+            R[nr] = value;
         }
-        public string notR(int index) {
-            int R_value_int = Convert.ToInt16(R[index], 2);
+        public string notR(int nr) {
+            int R_value_int = Convert.ToInt16(R[nr], 2);
             R_value_int = ~R_value_int;
             return Convert.ToString(R_value_int, 2);
         }
@@ -105,6 +106,14 @@ namespace proiectAC {
         }
         public void writeIR(string value) {
             IR = value;
+        }
+
+        // MP
+        public string readMP(int index) {
+            return MP[index];
+        }
+        public void writeMP(string value, int index) {
+            MP[index] = value;
         }
     }
 }
