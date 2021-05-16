@@ -24,11 +24,26 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
+            this.tCLK = new System.Windows.Forms.Timer(this.components);
+            this.SuspendLayout();
+            // 
+            // tCLK
+            // 
+            this.tCLK.Interval = 10;
+            // 
+            // Arhitectura
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "Arhitectura";
             this.Text = "Arhitectura";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer tCLK;
     }
 }
