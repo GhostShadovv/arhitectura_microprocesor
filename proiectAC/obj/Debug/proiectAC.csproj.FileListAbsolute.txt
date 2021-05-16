@@ -47,3 +47,4 @@ C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitect
 C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\Properties\Settings.Designer.cs
 C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\Properties\Settings.settings
 C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csprojAssemblyReference.cache
+C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.Arhitectura.resources
