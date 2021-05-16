@@ -198,6 +198,7 @@ namespace proiectAC
             using (BinaryReader br = new BinaryReader(File.Open("temp.bin", FileMode.Open))) {
                 br.BaseStream.Position = 0;
                 hexBytes = br.ReadBytes(System.Convert.ToInt16((int) br.BaseStream.Length));
+                //
             }
         }
     }
