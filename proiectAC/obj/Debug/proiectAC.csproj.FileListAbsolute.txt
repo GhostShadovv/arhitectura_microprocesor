@@ -1,29 +1,3 @@
-D:\Facultate\Anul 3\Semestrul 2\Sisteme de operare\Laborator\VisualStudio\customButton\customButton\bin\Debug\proiectAC.exe.config
-D:\Facultate\Anul 3\Semestrul 2\Sisteme de operare\Laborator\VisualStudio\customButton\customButton\bin\Debug\proiectAC.exe
-D:\Facultate\Anul 3\Semestrul 2\Sisteme de operare\Laborator\VisualStudio\customButton\customButton\bin\Debug\proiectAC.pdb
-D:\Facultate\Anul 3\Semestrul 2\Sisteme de operare\Laborator\VisualStudio\customButton\customButton\obj\Debug\proiectAC.csprojAssemblyReference.cache
-D:\Facultate\Anul 3\Semestrul 2\Sisteme de operare\Laborator\VisualStudio\customButton\customButton\obj\Debug\customButton.CustomButton.resources
-D:\Facultate\Anul 3\Semestrul 2\Sisteme de operare\Laborator\VisualStudio\customButton\customButton\obj\Debug\customButton.Form1.resources
-D:\Facultate\Anul 3\Semestrul 2\Sisteme de operare\Laborator\VisualStudio\customButton\customButton\obj\Debug\customButton.Forms.Editor.resources
-D:\Facultate\Anul 3\Semestrul 2\Sisteme de operare\Laborator\VisualStudio\customButton\customButton\obj\Debug\customButton.Forms.Memorie.resources
-D:\Facultate\Anul 3\Semestrul 2\Sisteme de operare\Laborator\VisualStudio\customButton\customButton\obj\Debug\proiectAC.Properties.Resources.resources
-D:\Facultate\Anul 3\Semestrul 2\Sisteme de operare\Laborator\VisualStudio\customButton\customButton\obj\Debug\proiectAC.csproj.GenerateResource.cache
-D:\Facultate\Anul 3\Semestrul 2\Sisteme de operare\Laborator\VisualStudio\customButton\customButton\obj\Debug\proiectAC.csproj.CoreCompileInputs.cache
-D:\Facultate\Anul 3\Semestrul 2\Sisteme de operare\Laborator\VisualStudio\customButton\customButton\obj\Debug\proiectAC.exe
-D:\Facultate\Anul 3\Semestrul 2\Sisteme de operare\Laborator\VisualStudio\customButton\customButton\obj\Debug\proiectAC.pdb
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\proiectAC.exe.config
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\proiectAC.exe
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\proiectAC.pdb
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csprojAssemblyReference.cache
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Properties.Resources.resources
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csproj.GenerateResource.cache
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.exe
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.pdb
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.CustomButton.resources
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Form1.resources
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.Editor.resources
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.Memorie.resources
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.CodificareInstructiuni.resources
 D:\GitHub\arhitectura_microprocesor\proiectAC\bin\Debug\Properties\Resources.resx
 D:\GitHub\arhitectura_microprocesor\proiectAC\bin\Debug\Properties\AssemblyInfo.cs
 D:\GitHub\arhitectura_microprocesor\proiectAC\bin\Debug\Properties\Resources.Designer.cs
@@ -32,8 +6,10 @@ D:\GitHub\arhitectura_microprocesor\proiectAC\bin\Debug\Properties\Settings.sett
 D:\GitHub\arhitectura_microprocesor\proiectAC\bin\Debug\proiectAC.exe.config
 D:\GitHub\arhitectura_microprocesor\proiectAC\bin\Debug\proiectAC.exe
 D:\GitHub\arhitectura_microprocesor\proiectAC\bin\Debug\proiectAC.pdb
+D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csprojAssemblyReference.cache
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.CustomButton.resources
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Form1.resources
+D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.Arhitectura.resources
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.Editor.resources
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.Memorie.resources
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.CodificareInstructiuni.resources
@@ -42,15 +18,3 @@ D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csproj.Generat
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csproj.CoreCompileInputs.cache
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.exe
 D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.pdb
-<<<<<<< HEAD
-D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.Arhitectura.resources
-D:\GitHub\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.csprojAssemblyReference.cache
-=======
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\Properties\Resources.resx
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\Properties\AssemblyInfo.cs
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\Properties\Resources.Designer.cs
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\Properties\Settings.Designer.cs
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\bin\Debug\Properties\Settings.settings
-C:\Users\Simona\Desktop\George\Arhitectura sistemelor de calcul\Proiect\arhitectura_microprocesor\proiectAC\obj\Debug\proiectAC.Forms.Arhitectura.resources
->>>>>>> 3103c6f917f36453d2cf2dda74708dec04459aa2
->>>>>>> parent of 3103c6f (Citire fisier bin, buton Run)
