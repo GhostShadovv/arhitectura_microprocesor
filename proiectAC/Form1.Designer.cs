@@ -24,7 +24,6 @@
         /// </summary>
         private void InitializeComponent() {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnMemoria = new System.Windows.Forms.Button();
             this.btnCodificareInstructiuni = new System.Windows.Forms.Button();
             this.btnArhitectura = new System.Windows.Forms.Button();
             this.pContent = new System.Windows.Forms.Panel();
@@ -36,11 +35,11 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buildToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.parsareCodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conversieHEXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnMemoria = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,21 +55,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1048, 48);
             this.panel1.TabIndex = 14;
-            // 
-            // btnMemoria
-            // 
-            this.btnMemoria.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnMemoria.FlatAppearance.BorderSize = 0;
-            this.btnMemoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMemoria.ForeColor = System.Drawing.Color.DimGray;
-            this.btnMemoria.Location = new System.Drawing.Point(431, 0);
-            this.btnMemoria.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMemoria.Name = "btnMemoria";
-            this.btnMemoria.Size = new System.Drawing.Size(186, 48);
-            this.btnMemoria.TabIndex = 2;
-            this.btnMemoria.Text = "Memoria";
-            this.btnMemoria.UseVisualStyleBackColor = true;
-            this.btnMemoria.Click += new System.EventHandler(this.btnMemoria_Click);
             // 
             // btnCodificareInstructiuni
             // 
@@ -128,9 +112,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.conversieHEXToolStripMenuItem,
-            this.buildToolStripMenuItem,
-            this.runToolStripMenuItem});
+            this.parsareCodToolStripMenuItem,
+            this.conversieHEXToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -192,12 +175,12 @@
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
-            // buildToolStripMenuItem
+            // parsareCodToolStripMenuItem
             // 
-            this.buildToolStripMenuItem.Name = "buildToolStripMenuItem";
-            this.buildToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
-            this.buildToolStripMenuItem.Text = "Build";
-            this.buildToolStripMenuItem.Click += new System.EventHandler(this.buildToolStripMenuItem_Click);
+            this.parsareCodToolStripMenuItem.Name = "parsareCodToolStripMenuItem";
+            this.parsareCodToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
+            this.parsareCodToolStripMenuItem.Text = "Parsare Cod";
+            this.parsareCodToolStripMenuItem.Click += new System.EventHandler(this.parsareCodToolStripMenuItem_Click);
             // 
             // conversieHEXToolStripMenuItem
             // 
@@ -210,12 +193,20 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // runToolStripMenuItem
+            // btnMemoria
             // 
-            this.runToolStripMenuItem.Name = "runToolStripMenuItem";
-            this.runToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
-            this.runToolStripMenuItem.Text = "Run";
-            this.runToolStripMenuItem.Click += new System.EventHandler(this.runToolStripMenuItem_Click);
+            this.btnMemoria.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnMemoria.FlatAppearance.BorderSize = 0;
+            this.btnMemoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMemoria.ForeColor = System.Drawing.Color.DimGray;
+            this.btnMemoria.Location = new System.Drawing.Point(431, 0);
+            this.btnMemoria.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMemoria.Name = "btnMemoria";
+            this.btnMemoria.Size = new System.Drawing.Size(186, 48);
+            this.btnMemoria.TabIndex = 2;
+            this.btnMemoria.Text = "Memoria";
+            this.btnMemoria.UseVisualStyleBackColor = true;
+            this.btnMemoria.Click += new System.EventHandler(this.btnMemoria_Click);
             // 
             // Form1
             // 
@@ -254,10 +245,9 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.ToolStripMenuItem buildToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem parsareCodToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem conversieHEXToolStripMenuItem;
         private System.Windows.Forms.Button btnMemoria;
-        private System.Windows.Forms.ToolStripMenuItem runToolStripMenuItem;
     }
 }
 
